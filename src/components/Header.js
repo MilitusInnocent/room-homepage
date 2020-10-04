@@ -1,33 +1,45 @@
-import React from 'react';
-import heroImage from '../images/desktop-image-hero-1.jpg';
+import React, { useState } from 'react';
 import arrow from '../images/icon-arrow.svg';
 import iconAngleLeft from '../images/icon-angle-left.svg';
 import iconAngleRight from '../images/icon-angle-right.svg';
+import data from '../slider.json';
 
-const Header = () => (
-    <div className="header">
-        <div className="header__image__container">
-            <img src={heroImage} alt="Hero Image" />
-        </div>
+const Header = () => {
+    const [current, setCurrent] = useState(0);
+    const [headerSlides] = useState(data);
 
-        <div className="header__textbox">
-            <div className="header__textbox__icons">
-                <img src={iconAngleLeft} alt="Angle left icon" />
-                <img src={iconAngleRight} alt="Angle right icon" />
+    const prev = () => {
+        setCurrent(current === 0 ? headerSlides.length - 1 : current - 1)
+    }
+
+    const next = () => {
+        setCurrent(current != headerSlides.length - 1 ? current + 1 : 0)
+    }
+
+    return (
+        <div className="header">
+            <div className="header__image__container">
+                <img src={require(`../images/desktop-` + headerSlides[current].image)} alt="Hero Image" />
             </div>
-            <h1 className="header__textbox__heading">Discover innovative ways to 
-            decorate
-            </h1>
-            <p className="header__textbox__subheading">
-            We provide unmatched quality, comfort, and style for 
-            property owners across the country. Our experts combine 
-            form and function in bringing your vision to life. Create a
-            room in your own style with out collection and make your property
-            a reflection of you and what you have.
-            </p>
-            <a href="#" className="header__link"><span>SHOP NOW</span> <img src={arrow} /></a>
+
+            <div className="header__textbox">
+                <div className="header__pagination__arrows">
+                    <button aria-label="Go to previous slide" onClick={prev}>
+                        <img src={iconAngleLeft} alt="Angle left icon" />
+                    </button>
+                    <button aria-label="Go to next slide" onClick={next}>
+                        <img src={iconAngleRight} alt="Angle right icon" />
+                    </button>
+                </div>
+                <h1 className="header__textbox__heading">{headerSlides[current].heading}</h1>
+                <p className="header__textbox__subheading">{headerSlides[current].subheading}</p>
+                <a href="#" className="header__textbox__link">
+                    <span>Shop Now</span> 
+                    <img src={arrow} alt="" />
+                </a>
+            </div>
         </div>
-    </div>
-)
+    )
+}
 
 export default Header;
