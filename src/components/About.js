@@ -9,7 +9,7 @@ const About = () => (
         </div>
 
         <div className="about__textbox">
-            <h1 className="about__textbox__heading">About Our Furniture</h1>
+            <h2 className="about__textbox__heading">About Our Furniture</h2>
             <p className="about__textbox__text">
                 Our multifunctional collection blends design and function to suit your 
                 individual taste. Make each room unique, or pick a cohesive theme that 
