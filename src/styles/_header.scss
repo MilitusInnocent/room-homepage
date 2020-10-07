@@ -1,0 +1,27 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &__image__container {
+        max-width: 100%;
+        flex: 0 0 60%;
+
+        img {
+            width: 700px;
+            transform: translateY(10px) scale(1.1);
+        }
+    }
+
+    &__textbox {
+        flex: 0 0 40%;
+        justify-content: center;
+        padding: 100px 100px 0 0;
+    }
+
+    &__pagination__arrows {
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 200px;
+    }
+}
