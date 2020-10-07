@@ -4,19 +4,22 @@
     justify-content: space-between;
 
     &__image__container {
-        max-width: 100%;
+        display: flex;
         flex: 0 0 60%;
 
         img {
-            width: 700px;
-            transform: translateY(10px) scale(1.1);
+            object-fit: cover;
+            width: 100%; 
         }
     }
 
     &__textbox {
+        display: flex;
+        flex-direction: column;
         flex: 0 0 40%;
+        position: relative;
         justify-content: center;
-        padding: 100px 100px 0 0;
+        padding: 0 5%;
     }
 
     &__pagination__arrows {
