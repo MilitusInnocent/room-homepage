@@ -32,24 +32,24 @@
             color: hsl(0, 0%, 63%);
         }
 
-        &__link {
-
-            img {
-                margin-left: 30px;
-            }
-            
+        &__link {            
             span {
                 text-transform: uppercase;
                 letter-spacing: 10px;
+                margin-right: 20px;
             }
 
             &:hover {
-                color: hsl(0, 0%, 63%);
+                 span, svg path {
+                    fill:hsl(0, 0%, 63%);
+                    color: hsl(0, 0%, 63%);
+                }
             }
         }
     }
 
     &__pagination__arrows {
+        display: flex;
         position: absolute;
         bottom: 0; left: 0;
 
@@ -57,8 +57,9 @@
             width: 60px;
             height: 70px;
             background-color: black;
+            transition: .2s;
 
-            button:hover {
+            &:hover {
                 background-color: hsl(0, 0%, 63%);
             }
         }
