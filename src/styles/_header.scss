@@ -7,9 +7,13 @@
         display: flex;
         flex: 0 0 60%;
 
-        img {
+        .image {
             object-fit: cover;
             width: 100%; 
+
+            &--mobile {
+                display: none;
+            }
         }
     }
 
@@ -19,7 +23,7 @@
         flex: 0 0 40%;
         position: relative;
         justify-content: center;
-        padding: 0 5%;
+        padding: 90px 5%;
 
         &__heading {
             font-size: 2.5em;
@@ -65,34 +69,33 @@
         }
     }
 
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+
+        &__image__container {
+            .image {
+                display: none;
+                
+                &--mobile {
+                    display: flex;
+                }
+            }
+        }
 
         &__textbox {
+            padding-top: 65px;
+            padding-bottom: 65px;
 
-            &__heading {
-                font-size: 1.5em;
+            &__subheading {
+                padding-top: 10px;
+                padding-bottom: 40px;
             }
         }
 
         &__pagination__arrows {
-            display: flex;
-            position: absolute;
-            bottom: 0; left: 0;
-
-            button {
-                width: 30px;
-                height: 40px;
-                background-color: black;
-                transition: .2s;
-
-                &:hover {
-                background-color: hsl(0, 0%, 63%);
-                }
-            }
-        }   
-    }
-
-    @media screen and (max-width: 767px) {
-
+            top: 0; right: 0; left: auto;
+            transform: translateY(-100%);
+            height: max-content;
+        }
     }
 }
