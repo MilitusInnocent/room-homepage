@@ -18,7 +18,8 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__image__container">
-                <img src={require(`../images/desktop-` + headerSlides[current].image)} alt="Hero Image" />
+                <img src={require(`../images/desktop-` + headerSlides[current].image)} alt="Contemporary furniture" className="image" />
+                <img src={require(`../images/mobile-` + headerSlides[current].image)} alt="Contemporary furniture" className="image image--mobile" />
             </div>
 
             <div className="header__textbox">
