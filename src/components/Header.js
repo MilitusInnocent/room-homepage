@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import arrow from '../images/icon-arrow.svg';
 import iconAngleLeft from '../images/icon-angle-left.svg';
 import iconAngleRight from '../images/icon-angle-right.svg';
 import data from '../slider.json';
