@@ -15,7 +15,7 @@ const Navbar = () => {
                 <Links />
             </div>
 
-            <a className={`navbar__btn ${mobileNavOpen ? 'x' : 'hamburger'}`} aria-label="Button for mobile nav deployment" onClick={() => setMobileNavOpen(!mobileNavOpen)}>
+            <a href="#" className={`navbar__btn ${mobileNavOpen ? 'x' : 'hamburger'}`} aria-label="Button for mobile nav deployment" onClick={() => setMobileNavOpen(!mobileNavOpen)}>
                 <img className="open" src={open} alt="" />
                 <img className="close" src={close} alt="" />
             </a>
